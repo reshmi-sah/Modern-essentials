@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+
+.scrollbar-hide::-webkit-scrollbar{
+  display: none;
+}
+
+.scrollbar-hide{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Main Toast */
+.Toastify__toast {
+  width: 350px;
+  min-height: 40px !important;
+  height: 40px !important;
+  padding: 6px 10px !important;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Message */
+.Toastify__toast-body {
+margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.2 !important;
+}
+
+.Toastify__toast-icon {
+  width: 14px !important;
+  margin-inline-end: 8px;
+}
+
+/* Close Button */
+.Toastify__close-button {
+  color: black !important;
+  font-weight: 700;
+  font-size: 18px;
+}
