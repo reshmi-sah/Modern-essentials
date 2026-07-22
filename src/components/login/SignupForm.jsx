@@ -15,8 +15,8 @@ const SignupForm = ({ setIsLogin }) => {
     const methods = useForm()
     const { handleSubmit, formState: {errors}, watch} = methods
 
-    const onSubmit = (data) => {
-        const result = signup(data)
+    const onSubmit = async (data) => {
+        const result = await signup(data)
 
          if(result.success) {
         successToast(result.message)

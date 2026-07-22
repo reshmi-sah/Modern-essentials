@@ -7,7 +7,7 @@ import { FormProvider, useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 import { errorToast, infoToast, successToast } from '../../utils/toast'
 
-const LoginForm = ({ setIsLogin }) => {
+const LoginForm = ({ setIsLogin, setIsForgot }) => {
 
     const navigate = useNavigate()
     const { login } = useContext(AuthContext)
@@ -17,10 +17,9 @@ const LoginForm = ({ setIsLogin }) => {
 
     const { handleSubmit, formState: {errors}} = methods
 
-     const onSubmit = (data) => {
-        const result = login(data.email, data.password)
+     const onSubmit = async (data) => {
+        const result = await login(data.email, data.password)
      
-
         if(result.success) {
            infoToast("Login successful")
 
@@ -93,6 +92,13 @@ const LoginForm = ({ setIsLogin }) => {
                 Signup
             </span>
         </p>
+
+        <p
+  className="text-right text-sm text-violet-600 cursor-pointer"
+  onClick={() => setIsForgot(true)}
+>
+  Forgot Password?
+</p>
 
 
       </form>

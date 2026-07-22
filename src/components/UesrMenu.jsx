@@ -29,7 +29,7 @@ const UesrMenu = () => {
             >
              <div className="font-[500] cursor-pointer flex items-center  sm:gap-2">
         <span className="text-sm active:scale-95">
-          {user.name}
+          {user.displayName}
         </span>
         <FaRegUser className="text-xl text-purple-800" />
       </div>

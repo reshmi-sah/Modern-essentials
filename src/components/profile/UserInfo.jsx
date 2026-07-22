@@ -13,7 +13,7 @@ const UserInfo = () => {
      <div className=" flex items-center  gap-2 ">
       <FaRegUserCircle className='text-3xl text-sky-900' />
    <div className='text-[0.8rem] text-black font-[400]  '>
-     <p> {user?.name} </p>
+     <p> {user?.displayName} </p>
     <p> {user?.email} </p>
    </div>
    </div>

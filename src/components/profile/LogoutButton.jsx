@@ -14,11 +14,11 @@ const LogoutButton = ({
     const { clearWishlist} = useContext(WishlistContext)
     const navigate = useNavigate()
 
-    const handleLogout = () => {
+    const handleLogout = async () => {
       clearCart()
       clearWishlist()
       
-        logout()
+       await logout()
         navigate('/auth')
     }
 

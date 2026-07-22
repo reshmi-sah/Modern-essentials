@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import LoginForm from '../components/login/LoginForm'
 import SignupForm from '../components/login/SignupForm'
+import ForgotPassword from '../components/login/ForgotPassword'
 import Authimage from '../assets/auth.png'
 
 
 const Auth = () => {
 
   const [isLogin, setIsLogin] = useState(true)
+  const [isForgot, setIsForgot] = useState(false)
 
   return (
 
@@ -23,17 +25,22 @@ const Auth = () => {
           className=' text-4xl font-bold text-center mb-5 leading-normal
           bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent '
         >
-          {
-            isLogin
+          {isForgot 
+           ? "Forgot Password"
+           : isLogin
             ? 'Login'
             : 'Signup'
           }
         </h1>
 
         {
-          isLogin
-          ? (
-            <LoginForm setIsLogin={setIsLogin} />
+          isForgot ? (
+            <ForgotPassword setIsForgot={setIsForgot} />
+          ) : isLogin ? (
+            <LoginForm 
+            setIsLogin={setIsLogin} 
+            setIsForgot={setIsForgot}
+            />
           )
           : (
             <SignupForm setIsLogin={setIsLogin} />
